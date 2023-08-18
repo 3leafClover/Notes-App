@@ -9,6 +9,7 @@ const NavBtn7 = document.getElementById("NavBtn7");
 const NavBtn8 = document.getElementById("NavBtn8");
 
 navState="closed"
+MNavBtn.style.zIndex="11"
 
 MNavBtn.addEventListener("click", NavOpen);
 
@@ -51,10 +52,14 @@ selected=document.querySelector(".selected");
 btns.forEach(btn => {
     btn.addEventListener("mouseover", (e) => {
         btn.style.boxShadow = "0px 0px 20px var(--secondary-light)";
+        btn.style.zIndex="10"
+        MNavBtn.style.zIndex="11"
     });
 
     btn.addEventListener("mouseleave", (e) => {
         btn.style.boxShadow = "0px 0px 0px var(--secondary-light)";
+        btn.style.zIndex="9"
+        MNavBtn.style.zIndex="11"
     });
     selected.addEventListener("mouseleave", (e) => {
         selected.style.boxShadow = "0px 0px 20px var(--secondary-light)";
@@ -214,6 +219,12 @@ document.addEventListener("keydown", (e) => {
             case "KeyI":
                 closeSlotsFunction();
                 break;
+            case "KeyU":
+                openShortcuts();
+                break;
+            case "KeyR":
+                piano();
+                break;
         }
     }
 });
@@ -296,7 +307,7 @@ function openFullscreen() {
 document.addEventListener("fullscreenchange", function(event) {
     if (!document.fullscreenElement) {
         console.log("Exited full-screen mode");
-        lastInfo.style.borderRight="9px solid white";
+        lastInfo.style.borderRight="9px solid  var(--border)";
         FCBtn.style.display="block";
     }
 });
@@ -308,15 +319,26 @@ function updateTime() {
     let hours = now.getHours();
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
+    var Nminutes
+
+    if(minutes<1){
+        Nminutes="00"
+    }
+    else if(minutes<10){
+        Nminutes="0"+minutes
+    }
+    else{
+        Nminutes=minutes
+    }
 
     let amOrPm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12 || 12;
 
-    const formattedTime = `${hours}:${minutes} ${amOrPm}`;
+    const formattedTime = `${hours}:${Nminutes} ${amOrPm}`;
     currentTimeElement.textContent = formattedTime;
 }
 
-updateTime(); // Call the function initially to display the current time
+updateTime();
 
 setInterval(updateTime, 1000);
 
@@ -361,17 +383,19 @@ displaySlotTitles();
 function updateColors() {
     const primaryColor = document.getElementById("primaryColorPicker").value;
     const secondaryColor = document.getElementById("secondaryColorPicker").value;
+    const borderColor = document.getElementById("borderColorPicker").value;
 
     document.documentElement.style.setProperty("--primary", primaryColor);
     document.documentElement.style.setProperty("--secondary", secondaryColor);
-    document.documentElement.style.setProperty("--background-color", secondaryColor + "70");
+    document.documentElement.style.setProperty("--border", borderColor);
+    document.documentElement.style.setProperty("--background-color", secondaryColor + "90");
 
     const primaryLight = lightenColor(primaryColor, 60);
     const secondaryLight = lightenColor(secondaryColor, 60);
     document.documentElement.style.setProperty("--primary-light", primaryLight);
     document.documentElement.style.setProperty("--secondary-light", secondaryLight);
 
-    saveColorsToLocalStorage(primaryColor, secondaryColor);
+    saveColorsToLocalStorage(primaryColor, secondaryColor, borderColor);
 }
 
 function lightenColor(color, percent) {
@@ -387,27 +411,38 @@ function lightenColor(color, percent) {
     return `#${newR.toString(16).padStart(2, '0')}${newG.toString(16).padStart(2, '0')}${newB.toString(16).padStart(2, '0')}`;
 }
 
-function saveColorsToLocalStorage(primaryColor, secondaryColor) {
+function saveColorsToLocalStorage(primaryColor, secondaryColor,borderColor) {
     localStorage.setItem("primaryColor", primaryColor);
     localStorage.setItem("secondaryColor", secondaryColor);
+    localStorage.setItem("borderColor", borderColor);
 }
 
 function loadColorsFromLocalStorage() {
     const storedPrimaryColor = localStorage.getItem("primaryColor");
     const storedSecondaryColor = localStorage.getItem("secondaryColor");
+    const storedBorderColor = localStorage.getItem("borderColor");
 
     if (storedPrimaryColor && storedSecondaryColor) {
         document.getElementById("primaryColorPicker").value = storedPrimaryColor;
         document.getElementById("secondaryColorPicker").value = storedSecondaryColor;
+
+        if (storedBorderColor) {
+            document.getElementById("borderColorPicker").value = storedBorderColor;
+        } else {
+            document.getElementById("borderColorPicker").value = "#ffffff";     
+        }
+
         updateColors();
     }
 }
 
 document.getElementById("primaryColorPicker").addEventListener("input", updateColors);
 document.getElementById("secondaryColorPicker").addEventListener("input", updateColors);
+document.getElementById("borderColorPicker").addEventListener("input", updateColors);
 
 loadColorsFromLocalStorage();
 updateColors();
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -663,7 +698,30 @@ function closeSlotsFunction() {
 }
 
 
+
+shortcutBtn=document.getElementById("lastInfo");
+shortcuts=document.getElementById("shortcuts");
+
+
+shortcutState="closed"
+function openShortcuts(){
+    if(shortcutState==="closed"){
+        shortcutState="open"
+        shortcuts.style.animation="shortcutsA 0.6s forwards";
+    }
+    else{
+        shortcutState="closed"
+        shortcuts.style.animation="shortcutsAR 0.5s forwards";
+    }
+}
+
+function piano(){
+    console.log("p")
+}
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     closeSlotsFunction()
-    NavOpen()
 });

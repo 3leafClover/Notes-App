@@ -4,17 +4,18 @@ body {
     width: 100%;
     font-family: sans-serif;
     overflow: hidden;
-
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 :root {
-    --primary: rgba(84, 255, 84);
-    --primary-light: rgb(171, 255, 171);
-    --secondary: rgb(255, 97, 215);
-    --secondary-light: rgb(255, 171, 234);
-    --background-color: rgba(255, 5, 193); /* Adjust opacity as needed */
+    --primary: rgb(255, 97, 24);
+    --primary-light: rgb(255, 158, 79);
+    --secondary: rgb(255, 48, 203);
+    --secondary-light: rgb(255, 120, 221);
+    --background-color: rgba(255, 5, 193, 0.363); 
+    --border:white;
 }
-
 
 
 .Btns {
@@ -24,22 +25,25 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 20px;
-    border: 7px solid white;
+    border: 7px solid var(--border);
     background-image: linear-gradient(to top, var(--primary) , var(--primary-light) );
     cursor: pointer;
 }
 #navBar{
     position: fixed;
-    z-index: 9;
+    z-index: 8;
 }
 #MNavBtn {
-    z-index: 10;
     background-image: linear-gradient(to top, var(--secondary-light) , var(--primary-light) );
     box-shadow: 0px 0px 10px var(--secondary-light);
 }
 
 .Btns i {
     font-size: 52px;
+    color: var(--border);
+}
+
+#MNavBtn i{
     color: white;
 }
 
@@ -145,7 +149,7 @@ body {
     
 }
 #slotCont{
-    background-color: white;
+    background-color: var(--border);
     position:fixed;
     width: 25%;
     height:92.5%;
@@ -153,8 +157,8 @@ body {
     left: 0px;
     display: flex;
     flex-direction: column;
-    z-index: 8;
-    border: 6px solid white;
+    z-index: 7;
+    border: 6px solid var(--border);
     border-bottom:0px;
     justify-content: space-around;
 }
@@ -177,7 +181,7 @@ body {
     opacity: 50%;
 }
 .slotTit{
-    color: white;
+    color: var(--border);
     margin-top: 3%;
     margin-left: 10px;
     font-size: 35px;
@@ -204,12 +208,12 @@ body {
     border: 0px solid;
     font-size: 42px;
     background: none;   
-    color: white;
+    color: var(--border);
     margin: 10px;
     text-decoration: underline;
 }
 .noteArea textarea{
-    color: white;
+    color: var(--border);
     font-size: 22px;
     background: none;
     width: 100%;
@@ -236,11 +240,11 @@ body {
     background: none;
     border: 0px;
     height: 100%;
-    color: white;
+    color: var(--border);
     font-size: 1.5em;
     width: 20%;
     text-align: center;
-    border-right: 9px solid white;
+    border-right: 9px solid var(--border);
 }
 
 #infoCont{
@@ -250,7 +254,7 @@ body {
     position:absolute;
     bottom: 0px;
     right: 0px;
-    border: 9px solid white;
+    border: 9px solid var(--border);
     background-image: linear-gradient(to top, var(--primary) , var(--primary-light) );
     width:100%;
     height: 8%;
@@ -258,7 +262,7 @@ body {
 #FCBtn{
     background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
     border: 0px;
-    color: white;
+    color: var(--border) ;
     font-size: 23px;
     justify-self: right;
     box-shadow: 0px 0px 20px var(--secondary-light);
@@ -276,7 +280,7 @@ body {
     width: 600px;
     z-index: 10;
     border-radius: 20px;
-    border: 7px solid white;
+    border: 7px solid var(--border);
     background-image: linear-gradient(to top, var(--primary), var(--primary-light));
     padding: 10px;
     top: -500px;
@@ -284,11 +288,11 @@ body {
 }
 
 .Mtitle{
-    color: white;
+    color: var(--border);
     width: 100%;
     text-align: center;
     font-weight: bolder;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid var(--border);
     display:block;
 }
 .close {
@@ -311,23 +315,24 @@ body {
 
 
 .Mtext{
-    color: white;
+    color: var(--border);
     font-weight: bolder;
     font-size: 20px;
 }
 .colorPicker{
-    border: 2px solid white;
+    border: 2px solid var(--border);
     border-radius: 2px;
     justify-self: end;
 }
 
 
 ::-webkit-file-upload-button{
-    color: white;
+    color: var(--border);
     background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
     border-radius: 10px;
-    border:3px solid white;
+    border:3px solid var(--border);
     margin-left: 50px;
+    cursor: pointer;
 
 }
 
@@ -344,10 +349,10 @@ body {
 
 
 #linkSubmit{
-    color: white;
+    color: var(--border);
     background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
     border-radius: 10px;
-    border:3px solid white;
+    border:3px solid var(--border);
     width: 100px;
     margin-left: 110px;
     font-weight: bolder;
@@ -356,9 +361,9 @@ body {
 #linkInput{
     background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
     border-radius: 10px;
-    border:3px solid white;
+    border:3px solid var(--border);
     margin-bottom: 10px;
-    color: white;
+    color: var(--border);
     width: 350px;
 }
 
@@ -371,14 +376,14 @@ body {
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
-    border: 4px solid white;
+    border: 4px solid var(--border);
     border-radius:10px ;
     margin-top: 5px;
 }
 
 .plan{
-    color: white;
-    border-bottom:2px solid white ;
+    color: var(--border);
+    border-bottom:2px solid var(--border);
     margin: 0px;
 
 }
@@ -403,12 +408,14 @@ body {
     left: 25%;
     cursor: pointer;
     background-image: linear-gradient(to right, var(--secondary-light),var(--secondary));
-    border: 0px solid white;
+    border: 0px solid var(--border);
     width: 4%;
     height: 92%;
     z-index: 9;
-    color: white;
+    color: var(--border);
     font-size: 40px;
+    z-index: 7;
+
 }
 
 @keyframes closeSlotsA{
@@ -460,4 +467,43 @@ body {
 .closeSlots{
     display: flex;
     align-items: center;
+}
+#lastInfo:hover{
+    animation: shortcut 2s forwards;
+    background-image: linear-gradient(to top, var(--secondary-light),var(--secondary));
+}
+#shortcuts{
+    position: absolute;
+    width: 35%;
+    left: 100%;
+    bottom: 8%;
+    height: fit-content;
+    padding: 10px;
+    display: flex;
+    border: 9px solid var(--border);
+    border-bottom: 0px;
+    font-size: 20px;
+    color: var(--border);
+    background-image: linear-gradient(to top, var(--primary-light) , var(--secondary-light) );
+}
+#alt{
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, var(--primary-light) , var(--secondary-light) );
+    border-radius: 10px;
+    width: 120px;
+    padding-left: 10px;
+    height: 100%;
+}
+#sk{
+    padding-left: 5px;
+}
+
+@keyframes shortcutsA{
+    from{left:100%;}
+    to{left: 65%;}
+}
+@keyframes shortcutsAR{
+    to{left:100%;}
+    from{left: 65%;}
 }

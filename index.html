@@ -27,7 +27,7 @@
 
         <div id="noteApp">
             <div id="slotCont">
-                <div class="first"><p class="slotTit">Made By Clover</p></div>
+                <div class="first"><p class="slotTit">Notes App</p></div>
                 <div class="slot" id="slot1"><p class="slotTit">Slot 1</p></div>
                 <div class="slot" id="slot2"><p class="slotTit">Slot 2</p></div>
                 <div class="slot" id="slot3"><p class="slotTit">Slot 3</p></div>
@@ -82,10 +82,12 @@
                 <p id="currentTime"></p>
                 <p id="battery"><i class="fas fa-battery-three-quarters" style="margin-right: 10px;"></i><span id="batteryPercentage"></span></p>
                 <p id="fixlater">RATATATATA</p>
-                <p id="lastInfo">Shortcuts</p>
+                <p id="lastInfo" onclick="openShortcuts()">Shortcuts</p>
                 <button id="FCBtn" onclick="openFullscreen()"><i class="bi bi-fullscreen"></i></button>
         </div>
-    
+        <div id="shortcuts">
+            <div id="alt">Alt + P</br>Alt + O</br>Alt + I</br>Alt + U</br>Alt + M</br>Alt + N</br>Alt + B</br>Alt + (1-8)</br>Alt + R</div><div id="sk">Opens Fullscreen Mode</br>Opens Nav Bar</br>Opens Slots</br>Opens Shotcuts Tab</br>Opens Daily Planner</br>Opens Customization Menu</br>Opens Video Player</br>Opens any slot</br>????? ??????? ?????</div>
+        </div>
     </div>
 
 
@@ -108,6 +110,7 @@
             <h2 class="Mtitle">Customize</h2><button class="close" id="customizeC" onclick="customizeM()"><i class='bi bi-x-lg'></i></button>
             <p class="Mtext">Select Primary Color: <input type="color" class="colorPicker" id="primaryColorPicker"></p>
             <p class="Mtext">Select Secondary Color: <input type="color" class="colorPicker" id="secondaryColorPicker"></p>        
+            <p class="Mtext">Select Accent Color: <input type="color" class="colorPicker" id="borderColorPicker"></p>        
             <p class="Mtext" style="text-align: center;">Upload Background: <input type="file" id="backgroundInput"></p>
         </div>
 
@@ -120,12 +123,12 @@
             <iframe id="myIframe" width="100%" height="330px" src="https://www.youtube.com/embed/c0g6BeiojZA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen autoplay></iframe>
         </div>
 
-        </div>
+    </div>
 
 
         
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-        <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
