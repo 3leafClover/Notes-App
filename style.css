@@ -1,0 +1,463 @@
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    overflow: hidden;
+
+}
+
+:root {
+    --primary: rgba(84, 255, 84);
+    --primary-light: rgb(171, 255, 171);
+    --secondary: rgb(255, 97, 215);
+    --secondary-light: rgb(255, 171, 234);
+    --background-color: rgba(255, 5, 193); /* Adjust opacity as needed */
+}
+
+
+
+.Btns {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    border: 7px solid white;
+    background-image: linear-gradient(to top, var(--primary) , var(--primary-light) );
+    cursor: pointer;
+}
+#navBar{
+    position: fixed;
+    z-index: 9;
+}
+#MNavBtn {
+    z-index: 10;
+    background-image: linear-gradient(to top, var(--secondary-light) , var(--primary-light) );
+    box-shadow: 0px 0px 10px var(--secondary-light);
+}
+
+.Btns i {
+    font-size: 52px;
+    color: white;
+}
+
+@keyframes btnHov{
+    from{font-size: 52px;}
+    to{font-size: 60px;}
+}
+.selected{
+    background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
+    box-shadow:0px 0px 20px var(--secondary-light);
+}
+
+#NavBtn1,#NavBtn2,#NavBtn3{
+    background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
+
+}
+@keyframes nav1A {
+    from {top: 20px;}
+    to {top: 170px;}
+}
+@keyframes nav2A {
+    from {top: 20px;}
+    to {top: 270px;}
+}
+@keyframes nav3A {
+    from {top: 20px;}
+    to {top: 370px;}
+}
+@keyframes nav4A {
+    from {right: 20px;}
+    to {right: 450px;}
+}
+@keyframes nav5A {
+    from {right: 20px;}
+    to {right: 550px;}
+}
+@keyframes nav6A {
+    from {right: 20px;}
+    to {right: 650px;}
+}
+@keyframes nav7A {
+    from {right: 20px;}
+    to {right: 750px;}
+}
+@keyframes nav8A {
+    from {right: 20px;}
+    to {right: 850px;}
+}
+
+
+
+
+@keyframes nav1AR {
+    to {top: 20px;}
+    from {top: 170px;}
+}
+@keyframes nav2AR {
+    to {top: 20px;}
+    from {top: 270px;}
+}
+@keyframes nav3AR {
+    to {top: 20px;}
+    from {top: 370px;}
+}
+@keyframes nav4AR {
+    to {right: 20px;}
+    from {right: 450px;}
+}
+@keyframes nav5AR {
+    to {right: 20px;}
+    from {right: 550px;}
+}
+@keyframes nav6AR {
+    to {right: 20px;}
+    from {right: 650px;}
+}
+@keyframes nav7AR {
+    from {right: 20px;}
+    from {right: 750px;}
+}
+@keyframes nav8AR {
+    to {right: 20px;}
+    from {right: 850px;}
+}
+
+@keyframes MNavBtnA{
+    from{
+        background-image: linear-gradient(to top, var(--secondary-light) , var(--primary-light) );
+    }
+    to{
+        background-image: linear-gradient(to top, red , rgb(255, 0, 0) );}
+}
+@keyframes MNavBtnAR{
+    to{background-color:var(--primary);
+        background-image: linear-gradient(to top, var(--secondary-light) , var(--primary-light) );
+    }
+    from{background-color:red;
+        background-image: none;}
+}
+#noteApp{
+    display: flex;
+    flex-direction: row;
+    
+}
+#slotCont{
+    background-color: white;
+    position:fixed;
+    width: 25%;
+    height:92.5%;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    z-index: 8;
+    border: 6px solid white;
+    border-bottom:0px;
+    justify-content: space-around;
+}
+.slot{
+    width: 100%;
+    height: 10.5%;
+    cursor: pointer;
+    background-image: linear-gradient(to right, var(--primary) , var(--primary-light) );
+    border-radius: 10px;
+}
+
+.first{
+    width: 100%;
+    height: 11%;
+    background-image: linear-gradient(to right, var(--secondary),var(--primary));
+    border-radius: 10px;
+}
+.slot:hover{
+    background-image: linear-gradient(to right, var(--secondary) , var(--secondary-light) );
+    opacity: 50%;
+}
+.slotTit{
+    color: white;
+    margin-top: 3%;
+    margin-left: 10px;
+    font-size: 35px;
+    display: inline-block;
+
+}
+::placeholder{
+    color: rgba(255, 255, 255, 0.575);
+}
+.noteArea{
+    position: fixed;
+    width: 72%;
+    height: 92%;
+    background-color: var(--background-color);
+    left: 28%;
+    top: 0px;
+    padding: 10px;
+    border: 10px solid var(--secondary); 
+    display: none;
+    
+}
+.noteArea input{
+    width: 85%;
+    border: 0px solid;
+    font-size: 42px;
+    background: none;   
+    color: white;
+    margin: 10px;
+    text-decoration: underline;
+}
+.noteArea textarea{
+    color: white;
+    font-size: 22px;
+    background: none;
+    width: 100%;
+    border: 0px solid;
+    margin: 10px;
+    margin-top: 20px;
+    height: 83%;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}  
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px var(--primary); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary); 
+    border-radius: 10px;
+}
+
+#infoCont p{
+    background: none;
+    border: 0px;
+    height: 100%;
+    color: white;
+    font-size: 1.5em;
+    width: 20%;
+    text-align: center;
+    border-right: 9px solid white;
+}
+
+#infoCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    position:absolute;
+    bottom: 0px;
+    right: 0px;
+    border: 9px solid white;
+    background-image: linear-gradient(to top, var(--primary) , var(--primary-light) );
+    width:100%;
+    height: 8%;
+}
+#FCBtn{
+    background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
+    border: 0px;
+    color: white;
+    font-size: 23px;
+    justify-self: right;
+    box-shadow: 0px 0px 20px var(--secondary-light);
+
+}
+
+.menus-container {
+    position: absolute;
+    display: block;
+    left: 27%;
+}
+
+.menus {
+    position: absolute;
+    width: 600px;
+    z-index: 10;
+    border-radius: 20px;
+    border: 7px solid white;
+    background-image: linear-gradient(to top, var(--primary), var(--primary-light));
+    padding: 10px;
+    top: -500px;
+    box-shadow: 0px 0px 10px var(--secondary-light);
+}
+
+.Mtitle{
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+    border-bottom: 3px solid white;
+    display:block;
+}
+.close {
+    margin-top: 10px;
+    margin-right: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: red;
+    font-size: 20px;
+    border: 0pc solid;
+    border-radius: 10px;
+}
+
+
+.Mtext{
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.colorPicker{
+    border: 2px solid white;
+    border-radius: 2px;
+    justify-self: end;
+}
+
+
+::-webkit-file-upload-button{
+    color: white;
+    background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
+    border-radius: 10px;
+    border:3px solid white;
+    margin-left: 50px;
+
+}
+
+@keyframes MdropDown{
+    0%{top:-900px;}
+    80%{top: 135px;}
+    90%{top: 135px;}
+    100%{top: 130px;}
+}
+@keyframes RdropDown{
+    from{top: 130px;}
+    to{top: -900px;}
+}
+
+
+#linkSubmit{
+    color: white;
+    background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
+    border-radius: 10px;
+    border:3px solid white;
+    width: 100px;
+    margin-left: 110px;
+    font-weight: bolder;
+}
+
+#linkInput{
+    background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
+    border-radius: 10px;
+    border:3px solid white;
+    margin-bottom: 10px;
+    color: white;
+    width: 350px;
+}
+
+
+#myIframe{
+    border-radius: 10px;
+}
+
+#planCont{
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
+    border: 4px solid white;
+    border-radius:10px ;
+    margin-top: 5px;
+}
+
+.plan{
+    color: white;
+    border-bottom:2px solid white ;
+    margin: 0px;
+
+}
+.plan p{
+    margin: 0px;
+    margin-left: 5px;
+}
+
+.blur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#closeSlots{
+    position: absolute;
+    top: 0%;
+    left: 25%;
+    cursor: pointer;
+    background-image: linear-gradient(to right, var(--secondary-light),var(--secondary));
+    border: 0px solid white;
+    width: 4%;
+    height: 92%;
+    z-index: 9;
+    color: white;
+    font-size: 40px;
+}
+
+@keyframes closeSlotsA{
+    from{left: 0%;}
+    to{left: -25%;}
+}
+@keyframes closeSlotsB{
+    from{left: 25%;}
+    to{left: 0%;}
+}
+@keyframes wideNote{
+    from{width: 72%;
+    left: 28%;}
+    to{width: 97%;
+    left: 3%;}
+}
+
+@keyframes closeSlotsAR{
+    to{left: 0%;}
+    from{left: -25%;}
+}
+@keyframes closeSlotsBR{
+    to{left: 25%;}
+    from{left: 0%;}
+}
+@keyframes wideNoteR{
+    to{width: 72%;
+    left: 28%;}
+    from{width: 97%;
+    left: 3%;}
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+@keyframes rotateR {
+    to {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(180deg);
+    }
+}
+.closeSlots{
+    display: flex;
+    align-items: center;
+}
