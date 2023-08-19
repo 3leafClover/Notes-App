@@ -79,12 +79,12 @@
         </div>
 
         <div id="infoCont">
-                <p id="currentDate"></p>
-                <p id="currentTime"></p>
-                <p id="battery"><i class="fas fa-battery-three-quarters" style="margin-right: 10px;"></i><span id="batteryPercentage"></span></p>
-                <p id="fixlater">RATATATATA</p>
-                <p id="lastInfo" onclick="openShortcuts()">Shortcuts</p>
-                <button id="FCBtn" onclick="openFullscreen()"><i class="bi bi-fullscreen"></i></button>
+            <p id="task">RATATATATA</p>
+            <p id="currentDate"></p>
+            <p id="currentTime"></p>
+            <p id="battery"><i class="fas fa-battery-three-quarters" style="margin-right: 10px;"></i><span id="batteryPercentage"></span></p>
+            <p id="lastInfo" onclick="openShortcuts()">Shortcuts</p>
+            <button id="FCBtn" onclick="openFullscreen()"><i class="bi bi-fullscreen"></i></button>
         </div>
         <div id="shortcuts">
             <div id="alt">Alt + P</br>Alt + O</br>Alt + I</br>Alt + U</br>Alt + M</br>Alt + N</br>Alt + B</br>Alt + X</br>Alt + (1-8)</br>Alt + R</div><div id="sk">Opens Fullscreen Mode</br>Opens Nav Bar</br>Opens Slots</br>Opens Shotcuts Tab</br>Opens Daily Planner</br>Opens Customization Menu</br>Opens Video Player</br>Closes all slots</br>Opens any slot</br>????? ?????</div>
@@ -127,6 +127,22 @@
     </div>
 
 
+    <audio id="soundNavOpen">
+        <source src="sounds/zapsplat_science_fiction_door_code_unlock_accept_001_61688.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="soundNavClose">
+        <source src="sounds/zapsplat_science_fiction_door_code_unlock_003_61687.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="soundMenuOpen">
+        <source src="sounds/free-sound-1674861382.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="soundSlotOpen">
+        <source src="sounds/free-sound-1674743136.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
         
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="script.js"></script>

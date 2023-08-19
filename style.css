@@ -29,6 +29,7 @@ body {
     border: 7px solid var(--border);
     background-image: linear-gradient(to top, var(--primary) , var(--primary-light) );
     cursor: pointer;
+    z-index: 8;
 }
 #navBar{
     position: fixed;
@@ -75,23 +76,23 @@ body {
 }
 @keyframes nav4A {
     from {right: 20px;}
-    to {right: 450px;}
+    to {right: 170px;}
 }
 @keyframes nav5A {
     from {right: 20px;}
-    to {right: 550px;}
+    to {right: 270px;}
 }
 @keyframes nav6A {
     from {right: 20px;}
-    to {right: 650px;}
+    to {right: 370px;}
 }
 @keyframes nav7A {
     from {right: 20px;}
-    to {right: 750px;}
+    to {right: 470px;}
 }
 @keyframes nav8A {
     from {right: 20px;}
-    to {right: 850px;}
+    to {right: 570px;}
 }
 
 
@@ -111,23 +112,23 @@ body {
 }
 @keyframes nav4AR {
     to {right: 20px;}
-    from {right: 450px;}
+    from {right: 170px;}
 }
 @keyframes nav5AR {
     to {right: 20px;}
-    from {right: 550px;}
+    from {right: 270px;}
 }
 @keyframes nav6AR {
     to {right: 20px;}
-    from {right: 650px;}
+    from {right: 370px;}
 }
 @keyframes nav7AR {
     from {right: 20px;}
-    from {right: 750px;}
+    from {right: 470px;}
 }
 @keyframes nav8AR {
     to {right: 20px;}
-    from {right: 850px;}
+    from {right: 570px;}
 }
 
 @keyframes MNavBtnA{
@@ -174,7 +175,7 @@ body {
 .first{
     width: 100%;
     height: 11%;
-    background-image: linear-gradient(to right, var(--secondary),var(--primary));
+    background-image: linear-gradient(to right, var(--secondary-light),var(--primary-light));
     border-radius: 10px;
 }
 .slot:hover{
@@ -476,7 +477,7 @@ body {
 }
 #lastInfo:hover{
     animation: shortcut 2s forwards;
-    background-image: linear-gradient(to top, var(--secondary-light),var(--secondary));
+    background-image: linear-gradient(to top, var(--secondary),var(--secondary-light));
 }
 #shortcuts{
     position: absolute;

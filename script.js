@@ -15,6 +15,7 @@ MNavBtn.addEventListener("click", NavOpen);
 
 function NavOpen() {
     if (navState === "closed") {
+        playSound("soundNavOpen");
         NavBtn1.style.animation = "nav1A 0.4s forwards";
         NavBtn2.style.animation = "nav2A 0.6s forwards";
         NavBtn3.style.animation = "nav3A 0.8s forwards";
@@ -30,6 +31,7 @@ function NavOpen() {
         console.log(navState)
     }
     else if (navState === "open") {
+        playSound("soundNavClose");
         NavBtn1.style.animation = "nav1AR 0.4s forwards";
         NavBtn2.style.animation = "nav2AR 0.4s forwards";
         NavBtn3.style.animation = "nav3AR 0.4s forwards";
@@ -52,14 +54,16 @@ selected=document.querySelector(".selected");
 btns.forEach(btn => {
     btn.addEventListener("mouseover", (e) => {
         btn.style.boxShadow = "0px 0px 20px var(--secondary-light)";
-        btn.style.zIndex="10"
+        btn.style.zIndex="9"
         MNavBtn.style.zIndex="11"
+        selected.style.zIndex="10"
     });
 
     btn.addEventListener("mouseleave", (e) => {
         btn.style.boxShadow = "0px 0px 0px var(--secondary-light)";
-        btn.style.zIndex="9"
+        btn.style.zIndex="8"
         MNavBtn.style.zIndex="11"
+        selected.style.zIndex="10"
     });
     selected.addEventListener("mouseleave", (e) => {
         selected.style.boxShadow = "0px 0px 20px var(--secondary-light)";
@@ -278,21 +282,14 @@ function loadDescs() {
 loadDescs()
 
 
-function openFullscreen() {
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) { /* Safari */
-        elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { /* IE11 */
-        elem.msRequestFullscreen();
-    }
-}
+
 
 
 var infoElements = document.querySelectorAll("#infoCont p");
 var lastInfo=document.getElementById("lastInfo")
 FCBtn=document.getElementById("FCBtn")
 function openFullscreen() {
+    playSound("soundFC");
     const elem = document.documentElement;
     infoElements.forEach(element => {
     lastInfo.style.border="0px solid";
@@ -463,7 +460,7 @@ function handleBackgroundUpload(event) {
 }
 blur=document.querySelector(".blur")
 function applyUploadedBackground(background) {
-    document.body.style.backgroundImage = `url(${background})`;
+    blur.style.backgroundImage = `url(${background})`;
 }
 
 function saveBackgroundToLocalStorage(background) {
@@ -505,6 +502,8 @@ const menuElements = document.querySelectorAll('.menus');
 
 function customizeM() {
     if (customizeState === "closed") {   
+        playSound("soundMenuOpen");
+        
         customize.style.display = "block";
         customize.style.animation = "MdropDown 0.6s forwards";
         customizeState = "open";
@@ -540,6 +539,7 @@ document.getElementById("musicC")
 
 function musicM() {
     if (musicState === "closed") {
+        playSound("soundMenuOpen");
         music.style.display = "block";
         music.style.animation = "MdropDown 0.6s forwards";
         musicState = "open";
@@ -575,6 +575,7 @@ document.getElementById("plannerC")
 
 function plannerM() {
     if (plannerState === "closed") {
+        playSound("soundMenuOpen");
         planner.style.display = "block";
         planner.style.animation = "MdropDown 0.6s forwards";
         plannerState = "open";
@@ -663,9 +664,11 @@ var slotState="closed"
 // ...
 
 function closeSlotsFunction() {
+    playSound("soundSlotOpen");
     if (slotState === "open") {
         // Update slotState before animations
         slotState = "closed";
+        
 
         // Apply closing animations
         slotCont.style.animation = "closeSlotsA 0.8s forwards";
@@ -701,11 +704,11 @@ shortcuts=document.getElementById("shortcuts");
 shortcutState="closed"
 function openShortcuts(){
     if(shortcutState==="closed"){
-        shortcutState="open"
+        shortcutState="open";
         shortcuts.style.animation="shortcutsA 0.6s forwards";
     }
     else{
-        shortcutState="closed"
+        shortcutState="closed";
         shortcuts.style.animation="shortcutsAR 0.5s forwards";
     }
 }
@@ -721,3 +724,28 @@ document.addEventListener("DOMContentLoaded", function() {
     closeSlotsFunction()
     
 });
+
+let currentAudio = null;
+
+function playSound(soundId) {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+
+    const soundEffect = document.getElementById(soundId);
+    if (soundEffect) {
+        soundEffect.play();
+        currentAudio = soundEffect;
+    }
+}
+
+// Get the audio element
+const soundSlotOpen = document.getElementById("soundNavOpen");
+
+soundNavOpen.volume = 0.4;
+
+const soundSlotClose = document.getElementById("soundNavClose");
+
+soundNavClose.volume = 0.4;
+
