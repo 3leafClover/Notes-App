@@ -1,0 +1,24 @@
+body
+{
+  background:#112;
+  color:#fff;
+  user-select:none;
+  text-align:center;
+  font-size:30px;
+  font-family:arial;
+}   
+#cont{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+#goHome{
+  color: black;
+  background-color: white;
+  border: 3px solid black;
+  width: 420px;
+  justify-self: center;
+}
+a{
+  text-decoration: none;
+}

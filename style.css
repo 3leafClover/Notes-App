@@ -6,6 +6,7 @@ body {
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: 100%;
+    background-image: url("https://steamuserimages-a.akamaihd.net/ugc/2040728994808114844/671A99809194A02644F70B192122E041E99CEE11/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
 }
 
 :root {
@@ -335,6 +336,9 @@ body {
     cursor: pointer;
 
 }
+::-webkit-file-upload-button:hover{
+    background-image: linear-gradient(to top, var(--secondary) , var(--secondary) );
+}
 
 @keyframes MdropDown{
     0%{top:-900px;}
@@ -357,7 +361,9 @@ body {
     margin-left: 110px;
     font-weight: bolder;
 }
-
+#linkSubmit:hover{
+    background-image: linear-gradient(to top, var(--secondary) , var(--secondary) );
+}
 #linkInput{
     background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
     border-radius: 10px;
@@ -484,12 +490,12 @@ body {
     border-bottom: 0px;
     font-size: 20px;
     color: var(--border);
-    background-image: linear-gradient(to top, var(--primary-light) , var(--secondary-light) );
+    background-image: linear-gradient(to top, var(--primary-light) , var(--primary) );
 }
 #alt{
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(to bottom, var(--primary-light) , var(--secondary-light) );
+    background-image: linear-gradient(to left, var(--secondary-light) , var(--secondary) );
     border-radius: 10px;
     width: 120px;
     padding-left: 10px;
@@ -498,7 +504,6 @@ body {
 #sk{
     padding-left: 5px;
 }
-
 @keyframes shortcutsA{
     from{left:100%;}
     to{left: 65%;}

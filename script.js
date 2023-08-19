@@ -222,6 +222,9 @@ document.addEventListener("keydown", (e) => {
             case "KeyU":
                 openShortcuts();
                 break;
+            case "KeyX":
+                hideAllNotes();
+                break;
             case "KeyR":
                 piano();
                 break;
@@ -306,7 +309,6 @@ function openFullscreen() {
 
 document.addEventListener("fullscreenchange", function(event) {
     if (!document.fullscreenElement) {
-        console.log("Exited full-screen mode");
         lastInfo.style.borderRight="9px solid  var(--border)";
         FCBtn.style.display="block";
     }
@@ -425,13 +427,7 @@ function loadColorsFromLocalStorage() {
     if (storedPrimaryColor && storedSecondaryColor) {
         document.getElementById("primaryColorPicker").value = storedPrimaryColor;
         document.getElementById("secondaryColorPicker").value = storedSecondaryColor;
-
-        if (storedBorderColor) {
-            document.getElementById("borderColorPicker").value = storedBorderColor;
-        } else {
-            document.getElementById("borderColorPicker").value = "#ffffff";     
-        }
-
+        document.getElementById("borderColorPicker").value = storedBorderColor;
         updateColors();
     }
 }
@@ -442,7 +438,6 @@ document.getElementById("borderColorPicker").addEventListener("input", updateCol
 
 loadColorsFromLocalStorage();
 updateColors();
-
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -716,7 +711,7 @@ function openShortcuts(){
 }
 
 function piano(){
-    console.log("p")
+    window.location.href = "piano/piano.html";
 }
 
 
@@ -724,4 +719,5 @@ function piano(){
 
 document.addEventListener("DOMContentLoaded", function() {
     closeSlotsFunction()
+    
 });
