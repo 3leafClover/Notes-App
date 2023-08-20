@@ -87,13 +87,7 @@ const numSlots = 8;
 const slotPrefix = "slot";
 const naPrefix = "na";
 
-for (let i = 1; i <= numSlots; i++) {
-    const slotElement = document.getElementById(`${slotPrefix}${i}`);
-    
-    slotElement.addEventListener("click", () => {
-        displaySlot(i);
-    });
-}
+
 
 slot1.addEventListener("click",displaySlot1);
 slot2.addEventListener("click",displaySlot2);
@@ -158,6 +152,7 @@ function displaySlot8(){
 
 
 function hideAllNotes() {
+    playSound("soundSlotSwitch");
     const noteElements = [
         na1, na2, na3, na4, na5, na6, na7, na8
     ];
@@ -503,7 +498,6 @@ const menuElements = document.querySelectorAll('.menus');
 function customizeM() {
     if (customizeState === "closed") {   
         playSound("soundMenuOpen");
-        
         customize.style.display = "block";
         customize.style.animation = "MdropDown 0.6s forwards";
         customizeState = "open";
@@ -518,6 +512,7 @@ function customizeM() {
             applyBlur(allElements[i]);
         }
     } else {
+        playSound("soundMenuClose");
         customize.style.animation = "RdropDown 0.8s forwards";
         customizeState = "closed";
         setTimeout(function() {
@@ -554,6 +549,7 @@ function musicM() {
             applyBlur(allElements[i]);
         }
     } else {
+        playSound("soundMenuClose");
         music.style.animation = "RdropDown 0.8s forwards";
         musicState = "closed";
         setTimeout(function() {
@@ -590,6 +586,7 @@ function plannerM() {
             applyBlur(allElements[i]);
         }
     } else {
+        playSound("soundMenuClose");
         planner.style.animation = "RdropDown 0.8s forwards";
         plannerState = "closed";
         setTimeout(function() {
@@ -703,6 +700,7 @@ shortcuts=document.getElementById("shortcuts");
 
 shortcutState="closed"
 function openShortcuts(){
+    playSound("soundShortcutOpen");
     if(shortcutState==="closed"){
         shortcutState="open";
         shortcuts.style.animation="shortcutsA 0.6s forwards";
@@ -741,11 +739,12 @@ function playSound(soundId) {
 }
 
 // Get the audio element
-const soundSlotOpen = document.getElementById("soundNavOpen");
+const soundNavOpen = document.getElementById("soundNavOpen");
 
 soundNavOpen.volume = 0.4;
 
-const soundSlotClose = document.getElementById("soundNavClose");
+const soundNavClose = document.getElementById("soundNavClose");
 
 soundNavClose.volume = 0.4;
+
 
