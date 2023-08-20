@@ -170,6 +170,7 @@ body {
     cursor: pointer;
     background-image: linear-gradient(to right, var(--primary) , var(--primary-light) );
     border-radius: 10px;
+    z-index: 5;
 }
 
 .first{
@@ -492,6 +493,7 @@ body {
     font-size: 20px;
     color: var(--border);
     background-image: linear-gradient(to top, var(--primary-light) , var(--primary) );
+    z-index: 5;
 }
 #alt{
     display: flex;
@@ -512,4 +514,33 @@ body {
 @keyframes shortcutsAR{
     to{left:100%;}
     from{left: 65%;}
+}
+#home{
+    position: absolute;
+    right: 20px;
+    bottom: 12%;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    color: var(--secondary);
+    opacity: 50%;
+    display: none;
+}
+#home:hover{
+    opacity: 100%;
+    cursor: pointer;
+}
+#clover{
+    position: absolute;
+    z-index: 1;
+    left: 6%;
+    top: 20px;
+    z-index: 0;
+    opacity: 20%;
+}
+#clover a img{
+    width: 97px;
+}
+#clover:hover{
+    opacity: 100%;
 }

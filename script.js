@@ -99,60 +99,80 @@ slot7.addEventListener("click",displaySlot7);
 slot8.addEventListener("click",displaySlot8);
 
 
-
+home=document.getElementById("home");
+clover=document.getElementById("clover");
 
 function displaySlot1(){
     hideAllNotes();
     na1.style.display = "block";
     slot1.style.backgroundImage="linear-gradient(to right, var(--secondary) , var(--secondary-light) )";
     slot1.style.boxShadow= "0px 0px 20px var(--secondary-light)";
+    home.style.display="block";
+    clover.style.display="none";
 }
 function displaySlot2(){
     hideAllNotes();
     na2.style.display = "block";
     slot2.style.backgroundImage="linear-gradient(to right, var(--secondary) , var(--secondary-light) )";
     slot2.style.boxShadow= "0px 0px 20px var(--secondary-light)";
+    home.style.display="block";
+    clover.style.display="none";
 }
 function displaySlot3(){
     hideAllNotes();
     na3.style.display = "block";
     slot3.style.backgroundImage="linear-gradient(to right, var(--secondary) , var(--secondary-light) )";
     slot3.style.boxShadow= "0px 0px 20px var(--secondary-light)";
+    home.style.display="block";
+    clover.style.display="none";
 }
 function displaySlot4(){
     hideAllNotes();
     na4.style.display = "block";
     slot4.style.backgroundImage="linear-gradient(to right, var(--secondary) , var(--secondary-light) )";
     slot4.style.boxShadow= "0px 0px 20px var(--secondary-light)";
+    home.style.display="block";
+    clover.style.display="none";
 }
 function displaySlot5(){
     hideAllNotes();
     na5.style.display = "block";
     slot5.style.backgroundImage="linear-gradient(to right, var(--secondary) , var(--secondary-light) )";
     slot5.style.boxShadow= "0px 0px 20px var(--secondary-light)";
+    home.style.display="block";
+    clover.style.display="none";
 }
 function displaySlot6(){
     hideAllNotes();
     na6.style.display = "block";
     slot6.style.backgroundImage="linear-gradient(to right, var(--secondary) , var(--secondary-light) )";
     slot6.style.boxShadow= "0px 0px 20px var(--secondary-light)";
+    home.style.display="block";
+    clover.style.display="none";
+
 }
 function displaySlot7(){
     hideAllNotes();
     na7.style.display = "block";
     slot7.style.backgroundImage="linear-gradient(to right, var(--secondary) , var(--secondary-light) )";
     slot7.style.boxShadow= "0px 0px 20px var(--secondary-light)";
+    home.style.display="block";
+    clover.style.display="none";
 }
 function displaySlot8(){
     hideAllNotes();
     na8.style.display = "block";
     slot8.style.backgroundImage="linear-gradient(to right, var(--secondary) , var(--secondary-light) )";
     slot8.style.boxShadow= "0px 0px 20px var(--secondary-light)";
+    home.style.display="block";
+    clover.style.display="none";
 }
 
 
 function hideAllNotes() {
     playSound("soundSlotSwitch");
+    home.style.display="none";
+    clover.style.display="block"
     const noteElements = [
         na1, na2, na3, na4, na5, na6, na7, na8
     ];
