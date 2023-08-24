@@ -7,6 +7,7 @@ const NavBtn5 = document.getElementById("NavBtn5");
 const NavBtn6 = document.getElementById("NavBtn6");
 const NavBtn7 = document.getElementById("NavBtn7");
 const NavBtn8 = document.getElementById("NavBtn8");
+const NavBtn9 = document.getElementById("NavBtn9");
 
 navState="closed"
 MNavBtn.style.zIndex="11"
@@ -19,6 +20,7 @@ function NavOpen() {
         NavBtn1.style.animation = "nav1A 0.4s forwards";
         NavBtn2.style.animation = "nav2A 0.6s forwards";
         NavBtn3.style.animation = "nav3A 0.8s forwards";
+        NavBtn9.style.animation = "nav9A 1s forwards";
         NavBtn4.style.animation = "nav4A 0.4s forwards";
         NavBtn5.style.animation = "nav5A 0.6s forwards";
         NavBtn6.style.animation = "nav6A 0.8s forwards";
@@ -35,6 +37,7 @@ function NavOpen() {
         NavBtn1.style.animation = "nav1AR 0.4s forwards";
         NavBtn2.style.animation = "nav2AR 0.4s forwards";
         NavBtn3.style.animation = "nav3AR 0.4s forwards";
+        NavBtn9.style.animation = "nav9AR 0.4s forwards";
         NavBtn4.style.animation = "nav4AR 0.4s forwards";
         NavBtn5.style.animation = "nav5AR 0.4s forwards";
         NavBtn6.style.animation = "nav6AR 0.4s forwards";
@@ -101,6 +104,7 @@ slot8.addEventListener("click",displaySlot8);
 
 home=document.getElementById("home");
 clover=document.getElementById("clover");
+homepage=document.getElementById("homepage");
 
 function displaySlot1(){
     hideAllNotes();
@@ -109,6 +113,7 @@ function displaySlot1(){
     slot1.style.boxShadow= "0px 0px 20px var(--secondary-light)";
     home.style.display="block";
     clover.style.display="none";
+    homepage.style.display="none";
 }
 function displaySlot2(){
     hideAllNotes();
@@ -117,6 +122,7 @@ function displaySlot2(){
     slot2.style.boxShadow= "0px 0px 20px var(--secondary-light)";
     home.style.display="block";
     clover.style.display="none";
+    homepage.style.display="none";
 }
 function displaySlot3(){
     hideAllNotes();
@@ -125,6 +131,7 @@ function displaySlot3(){
     slot3.style.boxShadow= "0px 0px 20px var(--secondary-light)";
     home.style.display="block";
     clover.style.display="none";
+    homepage.style.display="none";
 }
 function displaySlot4(){
     hideAllNotes();
@@ -133,6 +140,7 @@ function displaySlot4(){
     slot4.style.boxShadow= "0px 0px 20px var(--secondary-light)";
     home.style.display="block";
     clover.style.display="none";
+    homepage.style.display="none";
 }
 function displaySlot5(){
     hideAllNotes();
@@ -141,6 +149,7 @@ function displaySlot5(){
     slot5.style.boxShadow= "0px 0px 20px var(--secondary-light)";
     home.style.display="block";
     clover.style.display="none";
+    homepage.style.display="none";
 }
 function displaySlot6(){
     hideAllNotes();
@@ -149,7 +158,7 @@ function displaySlot6(){
     slot6.style.boxShadow= "0px 0px 20px var(--secondary-light)";
     home.style.display="block";
     clover.style.display="none";
-
+    homepage.style.display="none";
 }
 function displaySlot7(){
     hideAllNotes();
@@ -158,6 +167,7 @@ function displaySlot7(){
     slot7.style.boxShadow= "0px 0px 20px var(--secondary-light)";
     home.style.display="block";
     clover.style.display="none";
+    homepage.style.display="none";
 }
 function displaySlot8(){
     hideAllNotes();
@@ -166,13 +176,15 @@ function displaySlot8(){
     slot8.style.boxShadow= "0px 0px 20px var(--secondary-light)";
     home.style.display="block";
     clover.style.display="none";
+    homepage.style.display="none";
 }
 
 
 function hideAllNotes() {
     playSound("soundSlotSwitch");
     home.style.display="none";
-    clover.style.display="block"
+    clover.style.display="block";
+    homepage.style.display="block";
     const noteElements = [
         na1, na2, na3, na4, na5, na6, na7, na8
     ];
@@ -231,6 +243,9 @@ document.addEventListener("keydown", (e) => {
                 break;
             case "KeyM":
                 plannerM();
+                break;
+            case "KeyV":
+                imagesM();
                 break;
             case "KeyP":
                 openFullscreen();
@@ -527,6 +542,9 @@ function customizeM() {
         if(plannerState==="open"){
             plannerM()
         }
+        if(imagesState==="open"){
+            imagesM()
+        }
         const allElements = document.body.getElementsByClassName("blur");
         for (let i = 0; i < allElements.length; i++) {
             applyBlur(allElements[i]);
@@ -564,6 +582,9 @@ function musicM() {
         if(plannerState==="open"){
             plannerM()
         }
+        if(imagesState==="open"){
+            imagesM()
+        }
         const allElements = document.body.getElementsByClassName("blur");
         for (let i = 0; i < allElements.length; i++) {
             applyBlur(allElements[i]);
@@ -587,7 +608,7 @@ function musicM() {
 
 plannerState="closed"
 var planner = document.getElementById("planner");
-document.getElementById("plannerC")
+document.getElementById("plannerC");
 
 function plannerM() {
     if (plannerState === "closed") {
@@ -601,6 +622,9 @@ function plannerM() {
         if(customizeState==="open"){
             customizeM()
         }
+        if(imagesState==="open"){
+            imagesM()
+        }
         const allElements = document.body.getElementsByClassName("blur");
         for (let i = 0; i < allElements.length; i++) {
             applyBlur(allElements[i]);
@@ -609,6 +633,45 @@ function plannerM() {
         playSound("soundMenuClose");
         planner.style.animation = "RdropDown 0.8s forwards";
         plannerState = "closed";
+        setTimeout(function() {
+            planner.style.display = "none";
+        }, 200);
+
+
+        const allElements = document.body.getElementsByClassName("blur");
+        for (let i = 0; i < allElements.length; i++) {
+            UnBlur(allElements[i]);
+        }
+    }
+}
+
+imagesState="closed"
+var images = document.getElementById("images");
+document.getElementById("imagesC");
+
+function imagesM() {
+    if (imagesState === "closed") {
+        playSound("soundMenuOpen");
+        images.style.display = "block";
+        images.style.animation = "MdropDown 0.6s forwards";
+        imagesState = "open";
+        if(musicState==="open"){
+            musicM()
+        }
+        if(customizeState==="open"){
+            customizeM()
+        }
+        if(plannerState==="open"){
+            plannerM()
+        }
+        const allElements = document.body.getElementsByClassName("blur");
+        for (let i = 0; i < allElements.length; i++) {
+            applyBlur(allElements[i]);
+        }
+    } else {
+        playSound("soundMenuClose");
+        images.style.animation = "RdropDown 0.8s forwards";
+        imagesState = "closed";
         setTimeout(function() {
             planner.style.display = "none";
         }, 200);
@@ -766,5 +829,64 @@ soundNavOpen.volume = 0.4;
 const soundNavClose = document.getElementById("soundNavClose");
 
 soundNavClose.volume = 0.4;
+
+
+var tasks = document.getElementsByClassName("plan");
+
+for (var i = 0; i < tasks.length; i++) {
+    var taskInput = tasks[i].querySelector("input");
+
+    (function(index) {
+        taskInput.addEventListener("input", function(event) {
+            var inputValue = event.target.value;
+            var localStorageKey = "task_" + index;
+            localStorage.setItem(localStorageKey, inputValue);
+        });
+
+        var localStorageKey = "task_" + index;
+        var storedValue = localStorage.getItem(localStorageKey);
+        if (storedValue) {
+            taskInput.value = storedValue;
+        }
+    })(i);
+}
+
+
+
+const imageContainer = document.getElementById("imageContainer");
+const imageInput = document.getElementById("imageInput");
+
+// Load images from local storage on page load
+window.addEventListener("load", function() {
+    const savedImages = JSON.parse(localStorage.getItem("uploadedImages")) || [];
+
+    for (const imageUrl of savedImages) {
+        const imageElement = document.createElement("img");
+        imageElement.src = imageUrl;
+        imageContainer.appendChild(imageElement);
+    }
+});
+
+imageInput.addEventListener("change", function(event) {
+    const files = event.target.files;
+    const savedImages = JSON.parse(localStorage.getItem("uploadedImages")) || [];
+
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+
+        reader.onload = function(event) {
+            const imageUrl = event.target.result;
+            savedImages.push(imageUrl);
+            localStorage.setItem("uploadedImages", JSON.stringify(savedImages));
+
+            const imageElement = document.createElement("img");
+            imageElement.src = imageUrl;
+            imageContainer.appendChild(imageElement);
+        };
+
+        reader.readAsDataURL(file);
+    }
+});
 
 
