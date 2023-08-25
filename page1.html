@@ -97,7 +97,7 @@
         </div>
 
         <div id="homepage">
-            <a href="home.html"><img src="NoteOS logo.png"></a>
+            <!-- <a href="index.html"><img src="NoteOS logo.png"></a> -->
         </div>
 
 
@@ -146,7 +146,9 @@
         <div class="menus" id="images"> 
             <h2 class="Mtitle">Images</h2>
             <button class="close" id="imagesC" onclick="imagesM()"><i class='bi bi-x-lg'></i></button>
-            <input type="file" id="imageInput" accept="image/*">
+            <div id="imageBtns">
+                <input type="file" id="imageInput" accept="image/*"><button id="deleteBtn">Delete Images</button>
+            </div>
             <div id="imageContainer"></div>
         </div>
          
