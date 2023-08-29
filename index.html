@@ -1,1 +1,196 @@
-<a href="page1.html">To page 1</a>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>NoteOS</title>
+    <link rel="icon" href="NoteOS logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
+</head>
+
+<body>
+    <div class="blur">
+        <div id="homeBG"></div>
+        <div id="navBar">
+            <button id="MNavBtn" class="Btns"><i class="bi bi-list-ul"></i></button>
+            <button id="NavBtn1" class="Btns" onclick="plannerM()"><i class="bi bi-calendar-check-fill" onclick="closeSlots()"></i></button>
+            <button id="NavBtn2" class="Btns" onclick="customizeM()"><i class="bi bi-palette-fill"></i></button>
+            <button id="NavBtn3" class="Btns" onclick="musicM()"><i class="bi bi-youtube"></i></button>
+            <a href="page5.html"><button id="NavBtn4" class="Btns"><i>5</i></button></a>
+            <a href="page4.html"><button id="NavBtn5" class="Btns"><i>4</i></button></a>
+            <a href="page3.html"><button id="NavBtn6" class="Btns"><i>3</i></button></a>
+            <a href="page2.html"><button id="NavBtn7" class="Btns"><i>2</i></button></a>
+            <a href="page1.html"><button id="NavBtn8" class="Btns"><i>1</i></button></a>
+            <button id="NavBtn9" class="Btns" onclick="imagesM()"><i><i class="bi bi-image"></i></i></button>
+        </div>  
+
+
+
+        <div id="infoCont">
+            <p id="currentDate"></p>
+            <p id="currentTime"></p>
+            <p id="battery"><i class="fas fa-battery-three-quarters" style="margin-right: 10px;"></i><span id="batteryPercentage"></span></p>
+            <p id="lastInfo" onclick="openShortcuts()">Shortcuts</p>
+            <button id="FCBtn" onclick="openFullscreen()"><i class="bi bi-fullscreen"></i></button>
+        </div>
+        <div id="shortcuts">
+            <div id="alt">Alt + P</br>Alt + O</br>Alt + I</br>Alt + U</br>Alt + M</br>Alt + N</br>Alt + B</br>Alt + V</br>Alt + X</br>Alt + (1-8)</br>Alt + R</div><div id="sk">Opens Fullscreen Mode</br>Opens Nav Bar</br>Opens Slots</br>Opens Shotcuts Tab</br>Opens Daily Planner</br>Opens Customization Menu</br>Opens Video Player</br>Opens Image Album</br>Closes slot</br>Opens any slot</br>Bored?</div>
+        </div>
+
+        <div id="clover" style="left: 91.5%;">
+            <a href="https://clover-portfolio.netlify.app/" target="_blank"><img src="logo-removebg-preview.png"></a>
+            <p>My Portfolio</p>
+        </div>
+
+        <div id="homepage">
+            <!-- <a href="index.html"><img src="NoteOS logo.png"></a> -->
+        </div>
+
+
+        <div id="home" onclick="hideAllNotes()"><i class="bi bi-house-door-fill"></i></div>
+    </div>
+
+
+    <div class="menus-container">
+        <div class="menus" id="planner">
+            <h2 class="Mtitle">Daily Planner</h2><button class="close" id="plannerC" onclick="plannerM()"><i class='bi bi-x-lg'></i></button>
+            <div class="container">
+                <div class="left">
+                  <div class="calendar">
+                    <div class="month">
+                      <i class="fas fa-angle-left prev"></i>
+                      <div class="date">december 2015</div>
+                      <i class="fas fa-angle-right next"></i>
+                    </div>
+                    <div class="weekdays">
+                      <div>Sun</div>
+                      <div>Mon</div>
+                      <div>Tue</div>
+                      <div>Wed</div>
+                      <div>Thu</div>
+                      <div>Fri</div>
+                      <div>Sat</div>
+                    </div>
+                    <div class="days"></div>
+                    <div class="goto-today">
+                      <div class="goto">
+                        <input type="text" placeholder="mm/yyyy" class="date-input" />
+                        <button class="goto-btn">Go</button>
+                      </div>
+                      <button class="today-btn">Today</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="today-date">
+                    <div class="event-day">wed</div>
+                    <div class="event-date">12th december 2022</div>
+                  </div>
+                  <div class="events"></div>
+                  <div class="add-event-wrapper">
+                    <div class="add-event-header">
+                      <div class="title">Add Event</div>
+                    </div>
+                    <div class="add-event-body">
+                      <div class="add-event-input">
+                        <input type="text" placeholder="Event Name" class="event-name" />
+                      </div>
+                      <div class="add-event-input">
+                        <input
+                          type="text"
+                          placeholder="Event Time From"
+                          class="event-time-from"
+                        />
+                      </div>
+                      <div class="add-event-input">
+                        <input
+                          type="text"
+                          placeholder="Event Time To"
+                          class="event-time-to"
+                        />
+                      </div>
+                    </div>
+                    <div class="add-event-footer">
+                      <button class="add-event-btn">Add Event</button>
+                    </div>
+                  </div>
+                </div>
+                <button class="add-event">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+        </div>
+
+
+        <div class="menus" id="customize">
+            <h2 class="Mtitle">Customize</h2><button class="close" id="customizeC" onclick="customizeM()"><i class='bi bi-x-lg'></i></button>
+            <p class="Mtext">Select Primary Color: <input type="color" class="colorPicker" id="primaryColorPicker"></p>
+            <p class="Mtext">Select Secondary Color: <input type="color" class="colorPicker" id="secondaryColorPicker"></p>        
+            <p class="Mtext">Select Accent Color: <input type="color" class="colorPicker" id="borderColorPicker"></p>        
+            <p class="Mtext" style="text-align: center;">Upload Background: <input type="file" id="backgroundInput"></p>
+        </div>
+
+        <div class="menus" id="music">
+            <div id="musicTit">
+            <h2 class="Mtitle">Video Player</h2>
+            <button class="close" id="musicC" onclick="musicM()"><i class='bi bi-x-lg'></i></button>
+            <input id="linkInput" placeholder="Add youtube link"> <button id="linkSubmit">Submit</button>
+            </div>
+            <iframe id="myIframe" width="100%" height="330px" src="https://www.youtube.com/embed/c0g6BeiojZA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen autoplay></iframe>
+        </div>
+
+        <div class="menus" id="images"> 
+            <h2 class="Mtitle">Images</h2>
+            <button class="close" id="imagesC" onclick="imagesM()"><i class='bi bi-x-lg'></i></button>
+            <div id="imageBtns">
+                <input type="file" id="imageInput" accept="image/*"><button id="deleteBtn">Delete Images</button>
+            </div>
+            <div id="imageContainer"></div>
+        </div>
+         
+
+    </div>
+
+
+    <audio id="soundNavOpen">
+        <source src="sounds/zapsplat_science_fiction_door_code_unlock_accept_001_61688.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="soundNavClose">
+        <source src="sounds/zapsplat_science_fiction_door_code_unlock_003_61687.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="soundMenuOpen">
+        <source src="sounds/5a585020abd5d.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="soundMenuClose">
+        <source src="sounds/59b770554fc54.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="soundSlotOpen">
+        <source src="sounds/free-sound-1674743136.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="soundShortcutOpen">
+        <source src="sounds/computer-processing-sound-effects-short-click-select-01-122134.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="soundSlotSwitch">
+        <source src="sounds/5a9fa960bf2b7.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="soundFC">
+        <source src="sounds/5a9ff2fcefe0f.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="home.js"></script>
+</body>
+
+</html>

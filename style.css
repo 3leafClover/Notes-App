@@ -433,6 +433,16 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
 }
+#homeBG{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 92%;
+  overflow: hidden;
+  background-color: var(--background-color);
+  border: 10px solid var(--secondary);
+}
 #closeSlots{
     position: absolute;
     top: 0%;
@@ -498,6 +508,7 @@ body {
 .closeSlots{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 #lastInfo:hover{
     animation: shortcut 2s forwards;
@@ -563,6 +574,7 @@ body {
     color: white;
     text-align: center;
     font-weight: bolder;
+    display: block;
 }
 #clover a img{
     width: 97px;

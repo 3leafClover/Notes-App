@@ -380,7 +380,9 @@ function updateCurrentDate() {
     currentDateElement.innerHTML = `${formattedDate.replace(/, /g, ' ')}`;
 }
 
-updateCurrentDate(); // Call the function initially to display the current date
+updateCurrentDate(); 
+
+
 function displaySlotTitles() {
     const titleElements = [
         title1, title2, title3, title4, title5, title6, title7, title8
