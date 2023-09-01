@@ -17,18 +17,28 @@
         <div id="homeBG"></div>
         <div id="navBar">
             <button id="MNavBtn" class="Btns"><i class="bi bi-list-ul"></i></button>
-            <button id="NavBtn1" class="Btns" onclick="plannerM()"><i class="bi bi-calendar-check-fill" onclick="closeSlots()"></i></button>
-            <button id="NavBtn2" class="Btns" onclick="customizeM()"><i class="bi bi-palette-fill"></i></button>
-            <button id="NavBtn3" class="Btns" onclick="musicM()"><i class="bi bi-youtube"></i></button>
             <a href="page5.html"><button id="NavBtn4" class="Btns"><i>5</i></button></a>
             <a href="page4.html"><button id="NavBtn5" class="Btns"><i>4</i></button></a>
             <a href="page3.html"><button id="NavBtn6" class="Btns"><i>3</i></button></a>
             <a href="page2.html"><button id="NavBtn7" class="Btns"><i>2</i></button></a>
             <a href="page1.html"><button id="NavBtn8" class="Btns"><i>1</i></button></a>
-            <button id="NavBtn9" class="Btns" onclick="imagesM()"><i><i class="bi bi-image"></i></i></button>
         </div>  
 
+        <div id="homeInfo">
 
+          <h2 class="homeTitle">Wecome To Note<span style="color: rgb(255, 130, 234);">.OS</span></h2>
+          <p class="homeText">Note.OS is a user-friendly note-taking platform designed to help you organize your thoughts, ideas, and tasks seamlessly. With MyNotePad, you can create, edit, and store your notes effortlessly, ensuring that your important information is always within your reach!</p>
+          <p id="noteFC" onclick="openFullscreen()">Make sure to use Full Screen!</p>
+          <p class="homeText">It comes with many features:</p>
+          <h2 class="homeTitle feature">Customization:</h2>
+          <p class="homeText">Note.OS offers a lot of customization settings, from every color in the website down to the background images.</p>
+          <h2 class="homeTitle feature">Calendar:</h2>
+          <p class="homeText">A Calander inside the website to conveniently keep track of all your tasks every day of the month, every month of the year.</p>
+          <h2 class="homeTitle feature">Video Player:</h2>
+          <p class="homeText">A built in video player, so you can watch videos if you need a break from writing or you can listen to music / audio books in the background.</p>
+          <h2 class="homeTitle feature">Photo Album:</h2>
+          <p class="homeText">A photo album where you can save images that you can go back to later.</p>
+        </div>
 
         <div id="infoCont">
             <p id="currentDate"></p>
@@ -190,7 +200,7 @@
     </audio>
         
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="home.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
