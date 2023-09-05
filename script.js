@@ -10,6 +10,11 @@ MNavBtn.style.zIndex="11"
 
 MNavBtn.addEventListener("click", NavOpen);
 
+window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    preloader.classList.add('fade-out');
+});
+
 function NavOpen() {
     if (navState === "closed") {
         playSound("soundNavOpen");
@@ -1089,3 +1094,5 @@ timeHour = timeHour % 12 || 12;
 time = timeHour + ":" + timeMin + " " + timeFormat;
 return time;
 }
+
+
