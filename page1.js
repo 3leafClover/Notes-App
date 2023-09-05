@@ -743,7 +743,7 @@ var closeSlotsi=document.getElementById("closeSlotsI")
 var slotState="closed"
 
 
-// ...
+
 
 function closeSlotsFunction() {
     playSound("soundSlotOpen");
@@ -805,7 +805,8 @@ function piano(){
 
 document.addEventListener("DOMContentLoaded", function() {
     closeSlotsFunction()
-    
+    const preloader = document.getElementById('preloader');
+    preloader.classList.add('fade-out');
 });
 
 let currentAudio = null;
@@ -1405,3 +1406,4 @@ function convertTime(time) {
   time = timeHour + ":" + timeMin + " " + timeFormat;
   return time;
 }
+

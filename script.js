@@ -10,7 +10,7 @@ MNavBtn.style.zIndex="11"
 
 MNavBtn.addEventListener("click", NavOpen);
 
-window.addEventListener('load', function () {
+document.addEventListener("DOMContentLoaded", function() {
     const preloader = document.getElementById('preloader');
     preloader.classList.add('fade-out');
 });

@@ -1183,16 +1183,10 @@ padding: 0;
 box-sizing: border-box;
 }
 
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	background-color: #25252b;
-}
+
 
 .box {
-	position: relative;
+	position: absolute;
 	width: 400px;
 	height: 200px;
 	background: repeating-conic-gradient(
@@ -1246,13 +1240,15 @@ body {
 	}
 }
 #noteOS{
+  position: absolute;
   color: white;
   position: absolute;
   font-size: 60px;
   font-weight: bolder;
 }
 .preloader{
-  position: fixed;
+	position: absolute;
+
   top: 0;
   left: 0;
   width: 100%;
@@ -1264,17 +1260,19 @@ body {
   z-index: 9999; /* Ensure the preloader is on top of everything */
 }
 
-/* Animation for the disappearing effect */
 .preloader.fade-out {
   animation: fadeOut 1s ease-in-out forwards;
 }
 
 @keyframes fadeOut {
   0% {
-      opacity: 1;
+    opacity: 1;
   }
-  100% {
-      opacity: 0;
-      visibility: hidden;
+  99% {
+    opacity: 0;
+    visibility: hidden;
   } 
+  100%{
+    display: none;
+  }
 }
