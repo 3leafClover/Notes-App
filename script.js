@@ -158,27 +158,6 @@ updateCurrentDate();
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const backgroundInput = document.getElementById("backgroundInput");
-
-    backgroundInput.addEventListener("change", handleBackgroundUpload);
-});
-
-function handleBackgroundUpload(event) {
-    const file = event.target.files[0];
-
-    if (file) {
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            const uploadedBackground = e.target.result;
-            applyUploadedBackground(uploadedBackground);
-            saveBackgroundToLocalStorage(uploadedBackground);
-        }
-
-        reader.readAsDataURL(file);
-    }
-}
 blur=document.querySelector(".blur")
 function applyUploadedBackground(background) {
     blur.style.backgroundImage = `url(${background})`;
@@ -195,7 +174,7 @@ function loadBackgroundFromLocalStorage() {
     }
 }
 
-loadBackgroundFromLocalStorage();
+
 
 
 
