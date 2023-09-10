@@ -471,28 +471,11 @@ window.location.href = "piano/piano.html";
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const backgroundInput = document.getElementById("backgroundInput");
-
-    backgroundInput.addEventListener("change", handleBackgroundUpload);
+document.addEventListener("DOMContentLoaded", function() {
+    closeSlotsFunction()
+    const preloader = document.getElementById('preloader');
+    preloader.classList.add('fade-out');
 });
-
-function handleBackgroundUpload(event) {
-    const file = event.target.files[0];
-
-    if (file) {
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            const uploadedBackground = e.target.result;
-            applyUploadedBackground(uploadedBackground);
-            saveBackgroundToLocalStorage(uploadedBackground);
-        }
-
-        reader.readAsDataURL(file);
-    }
-}
-
 
 let currentAudio = null;
 
