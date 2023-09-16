@@ -1076,3 +1076,9 @@ return time;
 }
 
 
+firstCont=document.getElementById("first");
+welcome=document.getElementById("welcome");
+
+function welcomeF(){
+    welcome.style.animation="welcomeA forwards 1s"
+}

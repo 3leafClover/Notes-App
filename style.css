@@ -163,7 +163,7 @@ body {
     background-color: var(--border);
     position:fixed;
     width: 25%;
-    height:92.5%;
+    height: calc(100% - 50px); 
     top: 0px;
     left: 0px;
     display: flex;
@@ -206,7 +206,7 @@ body {
 .noteArea{
     position: fixed;
     width: 72%;
-    height: 92%;
+    height: calc(100% - 50px); 
     background-color: var(--background-color);
     left: 28%;
     top: 0px;
@@ -232,7 +232,7 @@ body {
     border: 0px solid;
     margin: 10px;
     margin-top: 20px;
-    height: 83%;
+    height: 88%;
 }
 
 
@@ -269,7 +269,7 @@ body {
     border: 9px solid var(--border);
     background-image: linear-gradient(to top, var(--primary) , var(--primary-light) );
     width:100%;
-    height: 8%;
+    height:50px;
 }
 #FCBtn{
     background-image: linear-gradient(to top, var(--secondary) , var(--secondary-light) );
@@ -278,7 +278,7 @@ body {
     font-size: 23px;
     justify-self: right;
     box-shadow: 0px 0px 20px var(--secondary-light);
-    width: 3%;
+    width: 36px;
 
 }
 
@@ -438,7 +438,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 92%;
+  height: calc(100% - 50px); 
   overflow: hidden;
   background-color: purple;
   border: 10px solid var(--secondary);
@@ -451,7 +451,7 @@ body {
     background-image: linear-gradient(to right, var(--secondary-light),var(--secondary));
     border: 0px solid var(--border);
     width: 4%;
-    height: 92%;
+    height: calc(100% - 50px); 
     z-index: 9;
     color: var(--border);
     font-size: 40px;
@@ -552,7 +552,7 @@ body {
 #home{
     position: absolute;
     right: 20px;
-    bottom: 12%;
+    bottom: 80px;
     width: 40px;
     height: 40px;
     font-size: 40px;
@@ -1241,11 +1241,13 @@ body {
     text-decoration: underline;
   }
 
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+  
+  
 
 .box {
 	position: absolute;
@@ -1338,3 +1340,142 @@ box-sizing: border-box;
     display: none;
   }
 }
+#welcome {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #292929;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white
+}
+.wordContainer {
+	overflow: hidden;
+}
+
+@keyframes up {
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+.word {
+	animation: up 0.8s;
+	animation-delay: 1.2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	transform: translateY(115%);
+}
+
+.textWrapper .wordContainer:nth-child(2) .word {
+	animation-delay: 1.35s;
+}
+.textWrapper .wordContainer:nth-child(3) .word {
+	animation-delay: 1.5s;
+}
+.textWrapper .wordContainer:nth-child(4) .word {
+	animation-delay: 1.65s;
+}
+
+
+.header {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  animation: allup 0.8s;
+	animation-delay: 2.7s;
+	animation-fill-mode: forwards;
+  top: 0%;
+
+}
+.textWrapper {
+	font-weight: 800;
+	font-size: 66px;
+	color: #fff;
+}
+.wordContainer {
+	float: left;
+}
+#firstCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+
+
+  width: fit-content;
+  height: fit-content;
+  
+  
+}
+#Imsomad{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18%;
+  animation: 0.5s forwards appearA;
+  animation-delay: 3.5s;
+  opacity: 0;
+}
+#firstT{
+  animation: 0.5s forwards appearA;
+  animation-delay: 3.5s;
+  opacity: 0;
+  color: rgb(94, 94, 94);
+}
+
+#first {
+  border-radius: 10px;
+  text-align: center; 
+  animation: 0.5s forwards appearA;
+  animation-delay: 4s;
+  opacity: 0;
+  cursor: pointer;
+  padding: 10px;
+}
+
+#continue{
+  position: absolute;
+  margin-right: 20px;
+  color:#747474;
+  opacity: 50%;
+  bottom: 0px;
+  cursor: pointer;
+  right: 0px;
+  margin-bottom: 10px;
+}
+#continue:hover{
+  opacity: 99%;
+  text-decoration: underline;
+}
+#e{
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, var(--primary), var(--secondary-light), var(--primary-light), var(--secondary));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  cursor: pointer;
+}
+#e:hover{
+  padding: 11px;
+}
+@keyframes allup{
+  to{
+  top: -40%;}
+}
+@keyframes welcomeA{
+  0%{  transform: translate(-50%, -50%);}
+  100%{  transform: translate(-50%, -150%);} 
+}
+@keyframes appearA{
+  from{opacity: 0%;}
+  to{opacity: 100%;}
+}
+
+
