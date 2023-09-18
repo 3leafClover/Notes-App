@@ -190,6 +190,7 @@ a{
     height: 11%;
     background-image: linear-gradient(to right, var(--secondary-light),var(--primary-light));
     border-radius: 10px;
+    text-align: center;
 }
 .slot:hover{
     background-image: linear-gradient(to right, var(--secondary) , var(--secondary-light) );
@@ -573,7 +574,7 @@ a{
     left: 6%;
     bottom: 8%;
     z-index: 0;
-    opacity: 20%;
+    opacity: 40%;
     color: white;
     text-align: center;
     font-weight: bolder;
@@ -591,7 +592,7 @@ a{
     left: 6%;
     top: 20px;
     z-index: 0;
-    opacity: 20%;
+    opacity: 40%;
 }
 #homepage a img{
     width: 97px;
@@ -600,7 +601,7 @@ a{
     animation: forwards appear 0.3s;
 }
 @keyframes appear{
-    from{opacity: 20%;}
+    from{opacity: 40%;}
     to{opacity: 100%;}
 }
 #images{
