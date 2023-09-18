@@ -8,12 +8,15 @@ body {
     background-size: 100%;
     background-image: url("https://steamuserimages-a.akamaihd.net/ugc/2040728994808114844/671A99809194A02644F70B192122E041E99CEE11/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
 }
-
+a{
+  text-decoration: none;
+  color: white;
+}
 :root {
     --primary: rgb(0, 119, 255);
     --primary-light: rgb(79, 190, 255);
     --secondary: rgb(255, 48, 203);
-    --secondary-light: rgb(255, 120, 221);
+    --secondary-light: rgb(255, 149, 229);
     --background-color: rgba(255, 5, 193, 0.774); 
     --border:white;
 }
@@ -232,7 +235,7 @@ body {
     border: 0px solid;
     margin: 10px;
     margin-top: 20px;
-    height: 88%;
+    height: 86%;
 }
 
 
@@ -674,6 +677,7 @@ body {
   position: absolute;
   width: 90%;
 }
+
 .homeText{
   font-size: 20px;
 }
@@ -716,6 +720,10 @@ body {
   border: 7px solid var(--secondary-light);
   text-align: center;
   height: 70px;
+  padding: 10px;
+  border-radius: 10px;
+	background-size: 200% 200%;
+	animation: gradient 15s ease infinite;
 }
 .NoteOSBtn h2{
   font-weight: bolder;
@@ -1401,16 +1409,16 @@ body {
 .wordContainer {
 	float: left;
 }
-#firstCont {
+#firstConta {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  flex-direction: column;
+  flex-direction: row;
 
 
   width: fit-content;
   height: fit-content;
+  margin-top: 150px;
   
   
 }
@@ -1423,14 +1431,15 @@ body {
   animation-delay: 3.5s;
   opacity: 0;
 }
-#firstT{
+.firstT{
   animation: 0.5s forwards appearA;
   animation-delay: 3.5s;
   opacity: 0;
-  color: rgb(94, 94, 94);
+  text-decoration: none;
+  
 }
 
-#first {
+.Home {
   border-radius: 10px;
   text-align: center; 
   animation: 0.5s forwards appearA;
@@ -1454,16 +1463,29 @@ body {
   opacity: 99%;
   text-decoration: underline;
 }
-#e{
+.e{
   padding: 10px;
   border-radius: 10px;
-  background: linear-gradient(-45deg, var(--primary), var(--secondary-light), var(--primary-light), var(--secondary));
+  background: linear-gradient(-45deg, var(--secondary), var(--secondary-light), var(--secondary), var(--secondary-light));
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   cursor: pointer;
+  margin: 20px;
+
 }
-#e:hover{
-  padding: 11px;
+#otherBtn{
+  background: linear-gradient(-45deg, var(--primary), var(--primary-light), var(--primary), var(--primary-light));
+  background-size: 400% 400%;
+  border-radius: 10px;
+}
+.e:hover{
+  padding: 12px;
+}
+#woo{
+  position: absolute;
+  width: 80%;
+  top: 200px;
+  color: #b6b6b6;
 }
 @keyframes allup{
   to{
@@ -1477,5 +1499,3 @@ body {
   from{opacity: 0%;}
   to{opacity: 100%;}
 }
-
-
