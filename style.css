@@ -104,7 +104,6 @@ a{
 
 
 
-
 @keyframes nav1AR {
     to {top: 20px;}
     from {top: 170px;}
@@ -236,7 +235,7 @@ a{
     border: 0px solid;
     margin: 10px;
     margin-top: 20px;
-    height: 86%;
+    height: 83%;
 }
 
 
@@ -444,7 +443,7 @@ a{
   width: 100%;
   height: calc(100% - 50px); 
   overflow: hidden;
-  background-color: purple;
+  background-color: rgb(63, 0, 63);
   border: 10px solid var(--secondary);
 }
 #closeSlots{
@@ -590,7 +589,7 @@ a{
     position: absolute;
     z-index: 1;
     left: 6%;
-    top: 20px;
+    top: 3%;
     z-index: 0;
     opacity: 40%;
 }
@@ -676,13 +675,14 @@ a{
   color: white;
   padding: 30px;
   position: absolute;
-  width: 90%;
+  width: 100%;
 }
 
 .homeText{
   font-size: 20px;
 }
 .homeTitle{
+  background-size: auto auto;
   font-size: 40px;
   text-align: center;
   font-weight: bolder;
@@ -1319,6 +1319,7 @@ a{
   font-size: 60px;
   font-weight: bolder;
 }
+
 .preloader{
 	position: absolute;
 
@@ -1326,7 +1327,7 @@ a{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #292929; /* Background color of the preloader */
+  background-color: #292929; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1358,7 +1359,9 @@ a{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white
+  color: white;
+  border: 10px solid var(--secondary);
+  
 }
 .wordContainer {
 	overflow: hidden;
@@ -1427,7 +1430,7 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 18%;
+  margin-top: 20%;
   animation: 0.5s forwards appearA;
   animation-delay: 3.5s;
   opacity: 0;
@@ -1472,6 +1475,8 @@ a{
   animation: gradient 15s ease infinite;
   cursor: pointer;
   margin: 20px;
+  width: 400px;
+  text-align: center;
 
 }
 #otherBtn{
@@ -1485,7 +1490,7 @@ a{
 #woo{
   position: absolute;
   width: 80%;
-  top: 200px;
+  top: 35%;
   color: #b6b6b6;
 }
 @keyframes allup{
