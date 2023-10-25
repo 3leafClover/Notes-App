@@ -514,6 +514,7 @@ a{
     justify-content: center;
 }
 #lastInfo:hover{
+  cursor: pointer;
     animation: shortcut 2s forwards;
     background-image: linear-gradient(to top, var(--secondary),var(--secondary-light));
 }
@@ -521,7 +522,7 @@ a{
     position: absolute;
     width: 35%;
     left: 100%;
-    bottom: 8%;
+    bottom: 50px;
     height: fit-content;
     padding: 10px;
     display: flex;
@@ -573,7 +574,7 @@ a{
     left: 6%;
     bottom: 8%;
     z-index: 0;
-    opacity: 40%;
+    opacity: 70%;
     color: white;
     text-align: center;
     font-weight: bolder;
@@ -591,7 +592,7 @@ a{
     left: 6%;
     top: 3%;
     z-index: 0;
-    opacity: 40%;
+    opacity: 70%;
 }
 #homepage a img{
     width: 97px;
