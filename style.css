@@ -571,7 +571,7 @@ a{
 #clover{
     position: absolute;
     z-index: 1;
-    left: 6%;
+    left: 91%;
     bottom: 8%;
     z-index: 0;
     opacity: 100%;
@@ -584,7 +584,7 @@ a{
     width: 97px;
 }
 #clover:hover{
-    animation: forwards appear 0.3s;
+    animation: forwards appear1 0.3s;
 }
 #homepage{
     position: absolute;
@@ -603,6 +603,10 @@ a{
 @keyframes appear{
     from{left: 6%;}
     to{left: 8%;}
+}
+@keyframes appear1{
+  from{left: 91%;}
+  to{left: 89%;}
 }
 #images{
     color: var(--border);
