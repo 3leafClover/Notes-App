@@ -601,8 +601,8 @@ a{
     animation: forwards appear 0.3s;
 }
 @keyframes appear{
-    from{opacity: 100%;}
-    to{opacity: 100%;}
+    from{left: 6%;}
+    to{left: 8%;}
 }
 #images{
     color: var(--border);
