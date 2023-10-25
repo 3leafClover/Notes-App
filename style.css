@@ -574,7 +574,7 @@ a{
     left: 6%;
     bottom: 8%;
     z-index: 0;
-    opacity: 70%;
+    opacity: 100%;
     color: white;
     text-align: center;
     font-weight: bolder;
@@ -592,7 +592,7 @@ a{
     left: 6%;
     top: 3%;
     z-index: 0;
-    opacity: 70%;
+    opacity: 100%;
 }
 #homepage a img{
     width: 97px;
@@ -601,7 +601,7 @@ a{
     animation: forwards appear 0.3s;
 }
 @keyframes appear{
-    from{opacity: 40%;}
+    from{opacity: 100%;}
     to{opacity: 100%;}
 }
 #images{
