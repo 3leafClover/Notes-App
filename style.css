@@ -593,6 +593,7 @@ a{
     top: 3%;
     z-index: 0;
     opacity: 100%;
+    display: none;
 }
 #homepage a img{
     width: 97px;
